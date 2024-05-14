@@ -19,7 +19,7 @@ def init_connection():
         # client = pymongo.MongoClient(mongo_uri)
         
         # return client
-        client = pymongo.MongoClient("mongodb+srv://Vedsu:CVxB6F2N700cQ0qu@cluster0.thbmwqi.mongodb.net/")
+        client = pymongo.MongoClient("mongodb+srv://----------------------@cluster0.thbmwqi.mongodb.net/")
         return client
     except Exception as e:
         st.error(f"Error raised, {str(e)}")
