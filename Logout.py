@@ -3,6 +3,15 @@ import yaml
 from yaml.loader import SafeLoader
 from streamlit_authenticator import Authenticate
 import Schedule
+import streamlit as st
+import pandas as pd
+from datetime import datetime, timedelta
+import datetime as dt
+import pymongo
+from dateutil import parser
+import time
+from collections import defaultdict
+import hydralit_components as hc
 
 
 def main():
@@ -24,35 +33,7 @@ def main():
             
         
 
-        # col1, col2 = st.columns(2)
 
-        # name, authentication_status, usernamer = authenticator.login('Login', 'main')
-
-        # if authentication_status:
-
-        #     # with col1:
-        #     #     
-            
-        #     # with col2:
-        #         # st.markdown(f'Welcome - <span style="color: blue;">*{name}*</span>', unsafe_allow_html=True)
-        #     Schedule.main()
-        # elif authentication_status == False:
-        #     st.error('Username/password is incorrect')
-        # elif authentication_status ==None:
-        #     st.warning('Please enter your username and password')
-
-
-        
-
-import streamlit as st
-import pandas as pd
-from datetime import datetime, timedelta
-import datetime as dt
-import pymongo
-from dateutil import parser
-import time
-from collections import defaultdict
-import hydralit_components as hc
 
 
 
@@ -374,21 +355,7 @@ def main():
                 with st.container():
                     
                     if i in day_numbers:
-                        # matching_entry = next((entry for entry in events_for_month if entry[0] == i), None)
-                        # extracted_dict = matching_entry[1]
-                        # webinar_value = extracted_dict.get("Webinar", None)
-                        # id_value = extracted_dict.get("ID", None)
-                        # status_value = extracted_dict.get("Status", None)
-                        # webinar_button_key = f"webinar_button_{count}_{id_value}"
-                        # # webinar_button_key = f"webinar_button_{count}"
-                        # # webinar_button_key = f"webinar_button_{id_value}"
-                        # # st.write(extracted_dict, key = webinar_button_key)
-                        # if webinar_value == 'Holiday':
-                        #     message_button = 'Holiday'
-                        # elif (status_value=='Active' and webinar_value!='Holiday')
-                        #     message_button = 'Booked'
-                        # elif (status_value!='Active' and webinar_value!='Holiday')
-                        #     message_button = 'status_value'
+                       
                         if st.button(message_button, key = webinar_button_key):
                             events_for_day = [event for event in events_for_month if event[0] == i]
                             for count in range(0,len(events_for_day)):
@@ -408,19 +375,7 @@ def main():
             with col3:
                 with st.container():
                     if i in day_numbers:
-                        # matching_entry = next((entry for entry in events_for_month if entry[0] == i), None)
-                        # extracted_dict = matching_entry[1]
-                        # webinar_value = extracted_dict.get("Webinar", None)
-                        # status_value = extracted_dict.get("Status", None)
-                        # id_value = extracted_dict.get("ID", None)
-                        # webinar_button_key = f"webinar_button_{count}_{id_value}"
-                        # # webinar_button_key = f"webinar_button_{count}"
-                        # if webinar_value == 'Holiday':
-                        #     message_button = 'Holiday'
-                        # elif (status_value=='Active' and webinar_value!='Holiday')
-                        #     message_button = 'Booked'
-                        # elif (status_value!='Active' and webinar_value!='Holiday')
-                        #     message_button = 'status_value'
+                        
                         if st.button(message_button, key = webinar_button_key):
                             events_for_day = [event for event in events_for_month if event[0] == i]
                             for count in range(0,len(events_for_day)):
@@ -440,19 +395,7 @@ def main():
             with col4:
                 with st.container():
                     if i in day_numbers:
-                        # matching_entry = next((entry for entry in events_for_month if entry[0] == i), None)
-                        # extracted_dict = matching_entry[1]
-                        # webinar_value = extracted_dict.get("Webinar", None)
-                        # id_value = extracted_dict.get("ID", None)
-                        # status_value = extracted_dict.get("Status", None)
-                        # if webinar_value == 'Holiday':
-                        #     message_button = 'Holiday'
-                        # elif (status_value=='Active' and webinar_value!='Holiday')
-                        #     message_button = 'Booked'
-                        # elif (status_value!='Active' and webinar_value!='Holiday')
-                        #     message_button = 'status_value'
-                        # webinar_button_key = f"webinar_button_{count}_{id_value}"
-                        # # webinar_button_key = f"webinar_button_{count}"
+                     
                         if st.button(message_button, key = webinar_button_key):
                             events_for_day = [event for event in events_for_month if event[0] == i]
                             for count in range(0,len(events_for_day)):
@@ -472,19 +415,7 @@ def main():
             with col5:
                 with st.container():
                     if i in day_numbers:
-                        # matching_entry = next((entry for entry in events_for_month if entry[0] == i), None)
-                        # extracted_dict = matching_entry[1]
-                        # webinar_value = extracted_dict.get("Webinar", None)
-                        # id_value = extracted_dict.get("ID", None)
-                        # status_value = extracted_dict.get("Status", None)
-                        # webinar_button_key = f"webinar_button_{count}_{id_value}"
-                        # # webinar_button_key = f"webinar_button_{count}"
-                        # if webinar_value == 'Holiday':
-                        #     message_button = 'Holiday'
-                        # elif (status_value=='Active' and webinar_value!='Holiday')
-                        #     message_button = 'Booked'
-                        # elif (status_value!='Active' and webinar_value!='Holiday')
-                        #     message_button = 'status_value'
+                       
                         if st.button(message_button, key = webinar_button_key):
                             events_for_day = [event for event in events_for_month if event[0] == i]
                             for count in range(0,len(events_for_day)):
@@ -504,19 +435,7 @@ def main():
             with col6:
                 with st.container():
                     if i in day_numbers:
-                        # matching_entry = next((entry for entry in events_for_month if entry[0] == i), None)
-                        # extracted_dict = matching_entry[1]
-                        # webinar_value = extracted_dict.get("Webinar", None)
-                        # id_value = extracted_dict.get("ID", None)
-                        # status_value = extracted_dict.get("Status", None)
-                        # webinar_button_key = f"webinar_button_{count}_{id_value}"
-                        # # webinar_button_key = f"webinar_button_{count}"
-                        # if webinar_value == 'Holiday':
-                        #     message_button = 'Holiday'
-                        # elif (status_value=='Active' and webinar_value!='Holiday')
-                        #     message_button = 'Booked'
-                        # elif (status_value!='Active' and webinar_value!='Holiday')
-                        #     message_button = 'status_value'
+                     
                         if st.button(message_button, key = webinar_button_key):
                             events_for_day = [event for event in events_for_month if event[0] == i]
                             for count in range(0,len(events_for_day)):
@@ -537,19 +456,7 @@ def main():
                 
                 with st.container():
                     if i in day_numbers:
-                        # matching_entry = next((entry for entry in events_for_month if entry[0] == i), None)
-                        # extracted_dict = matching_entry[1]
-                        # webinar_value = extracted_dict.get("Webinar", None)
-                        # id_value = extracted_dict.get("ID", None)
-                        # status_value = extracted_dict.get("Status", None)
-                        # webinar_button_key = f"webinar_button_{count}_{id_value}"
-                        # # webinar_button_key = f"webinar_button_{count}"
-                        # if webinar_value == 'Holiday':
-                        #     message_button = 'Holiday'
-                        # elif (status_value=='Active' and webinar_value!='Holiday')
-                        #     message_button = 'Booked'
-                        # elif (status_value!='Active' and webinar_value!='Holiday')
-                        #     message_button = 'status_value'
+                       
                         if st.button(message_button, key = webinar_button_key):
                             events_for_day = [event for event in events_for_month if event[0] == i]
                             for count in range(0,len(events_for_day)):
